@@ -15,18 +15,18 @@ namespace CalculoComissao.Entidades
             Console.WriteLine("====================================\n");
             Console.Write("\nDigite seu nome: ");
             var nomeVendedor = Console.ReadLine();
-            Console.Write("\nQual seu salário?: (R$)");
+            Console.Write($"\n{nomeVendedor}, qual o valor do seu salário?: (R$)");
             var salario = Convert.ToDouble(Console.ReadLine());
-            Console.Write("\nTotal de vendas realizadas no mês? (R$):");
+            Console.Write($"\n{nomeVendedor}, qual o total de vendas realizadas no mês? (R$):");
             var vendasMes = Convert.ToDouble(Console.ReadLine());
 
             var valorValidado = ValidarOsValores(nomeVendedor, salario, vendasMes);
 
-            if (valorValidado == true)
+            if (valorValidado == false)
             {
-                CalculaComissao(nomeVendedor, salario, vendasMes);
+                Console.WriteLine("Houve um erro com os valores informado!");           
             }
-            Console.WriteLine("Houve um erro com os valores informado!");
+            CalculaComissao(nomeVendedor, salario, vendasMes);
         }
 
         private bool ValidarOsValores(string nomeVendedor, double salario, double vendasMes)
@@ -48,7 +48,7 @@ namespace CalculoComissao.Entidades
         {
             double comissaoVendedor = vendasMes * 0.15;
             double salarioTotal = salario + comissaoVendedor;
-            Console.WriteLine($"\nOlá {nomeVendedor}. \nseu salário fixo é de: R$ {salario.ToString("C2")}. \nSua comissão foi de: R$ {comissaoVendedor.ToString("C2")}. \nSeu salário total foi de: R$ {salarioTotal.ToString("C2")}");
+            Console.WriteLine($"\nOlá {nomeVendedor}.\n \nseu salário fixo é de: R$ {salario.ToString("C2")}. \nSua comissão foi de: R$ {comissaoVendedor.ToString("C2")}. \nSeu salário total foi de: R$ {salarioTotal.ToString("C2")}");
         }
     }
 }
