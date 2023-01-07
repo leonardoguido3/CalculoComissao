@@ -48,7 +48,7 @@ namespace CalculoComissao.Entidades
         {
             double comissaoVendedor = vendasMes * 0.15;
             double salarioTotal = salario + comissaoVendedor;
-            Console.WriteLine("\nOlá " + nomeVendedor + ", seu salário fixo é de: R$" + salario + "\nSua comissão foi de: R$" + comissaoVendedor + "\nSeu salário total foi de: R$" + salarioTotal);
+            Console.WriteLine($"\nOlá {nomeVendedor}. \nseu salário fixo é de: R$ {salario.ToString("C2")}. \nSua comissão foi de: R$ {comissaoVendedor.ToString("C2")}. \nSeu salário total foi de: R$ {salarioTotal.ToString("C2")}");
         }
     }
 }
